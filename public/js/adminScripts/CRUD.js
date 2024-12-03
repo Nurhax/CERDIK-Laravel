@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function redirectToLogin(){
-  window.location = "LoginAdmin.html";
+  window.location.href = routes.adminMenu;
 }
 
 function tambahObat() {

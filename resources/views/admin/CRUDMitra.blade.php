@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link type="text/css" href="{{asset('css/admin/CRUDmitra.css')}}" rel="stylesheet">
+    <link type="text/css" href="{{asset('css/adminStyles/CRUDmitra.css')}}" rel="stylesheet">
     <title>Admin Cerdik</title>
 </head>
 <body>
@@ -13,8 +13,8 @@
     <div class="container-fluid" style="padding: 0;">
         <div class="navbar" style="background-color: #2563EB; height: 100px;">
             <div class="d-flex justify-content-start align-items-left">
-                <a href="CRUDMenu.html" target="_blank" style="padding-left: 20px;">
-                <img src="../images/CerdikLogo.png" alt="Cerdik" class="image" style="height: 70px; padding-right: 0px;">
+                <a href="{{ route('adminMenu')}}" target="_blank" style="padding-left: 20px;">
+                <img src="{{asset('storage/CerdikLogo.png')}}" alt="Cerdik" class="image" style="height: 70px; padding-right: 0px;">
                 </a>
                 <h1 style="color: white; font-weight: bold;padding-top: 10px; padding-left: 0px;">Cerdikin</h1>
             </div>
@@ -105,6 +105,6 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="./Scripts/CRUDmitra.js"></script> 
+    <script src="{{asset('js/adminScripts/CRUDmitra.js')}}"></script> 
 </body>
 </html>

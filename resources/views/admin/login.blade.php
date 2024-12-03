@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CERDIK-LoginAdmin</title>
     <link rel="stylesheet" href="{{asset('css/adminStyles/LoginAdmin.css')}}" type="text/css">
-    
+    <script>
+        const routes = {
+            adminMenu: @json(route('adminMenu'))
+        };
+    </script>
 </head>
 <body>
     <div class="SquareLogin">
@@ -18,10 +22,11 @@
             <br>
             <h2>Password</h2>
             <input type="password" style="height: 25px;" id="Password">
-        </div>
-        <div class="LoginButton">
+            <div class="LoginButton">
             <button type="button" style="font-size: 25px; border: none; border-radius: 5px; color: #2569FF;" onclick="HideLogin()">LOGIN</button>
+            </div>
         </div>
+        
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

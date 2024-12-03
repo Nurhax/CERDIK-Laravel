@@ -12,13 +12,19 @@
             color: rgb(39, 39, 249) !important;
         }
     </style>
+
+    <script>
+        const routes = {
+            adminMenu: @json(route('adminMenu'))
+        };
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid" style="font-family: Arial, Helvetica, sans-serif;">
-            <a class="navbar-brand" href="CRUDMenu.html">
-                <img src="../images/CerdikLogo.png" alt="logo" width="70" height="70">
-                <span class="fw-bold fs-1" style="color: white; font-family: Arial, Helvetica, sans-serif; padding-top: 10px;">cerdikin</span>
+            <a class="navbar-brand" href="{{ route('adminMenu')}}">
+                <img src="{{asset('storage/CerdikLogo.png')}}" alt="logo" width="70" height="70">
+                <span class="fw-bold fs-1" style="color: white; font-family: Arial, Helvetica, sans-serif; padding-top: 10px;">Cerdikin</span>
             </a>
 
             <!--NAVBAR-->
@@ -114,6 +120,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-    <script src="./Scripts/CRUD.js"></script> <!-- Link ke file JavaScript eksternal -->
+    <script src="{{asset('js/adminScripts/CRUD.js')}}"></script> <!-- Link ke file JavaScript eksternal -->
 </body>
 </html>

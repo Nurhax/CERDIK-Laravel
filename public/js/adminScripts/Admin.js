@@ -19,7 +19,7 @@ $(document).ready(function() {
             alert("PASSWORD DAN USERNAME SALAH!");
         } else {
             alert("Login Berhasil!");
-            window.location = 'CRUDMenu.html';
+            window.location.href = routes.adminMenu;
         }
     };
 
