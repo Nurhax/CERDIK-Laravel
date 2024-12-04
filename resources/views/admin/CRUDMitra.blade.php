@@ -20,13 +20,13 @@
             </div>
             <ul>
                 <li>
-                    <a href = "CRUDmitra.html">MITRA</a>
+                    <a href = "{{ route('CRUDMitra')}}">MITRA</a>
                 </li>
                 <li>
-                    <a href = "CRUDobat.html">OBAT</a>
+                    <a href = "{{ route('CRUDObat')}}">OBAT</a>
                 </li>
                 <li>
-                    <a href = "LoginAdmin.html">LOGOUT</a>
+                    <a href = "{{ route('login')}}">LOGOUT</a>
                 </li>
             </ul>            
         </div>

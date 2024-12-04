@@ -15,7 +15,9 @@
 
     <script>
         const routes = {
-            adminMenu: @json(route('adminMenu'))
+            adminMenu: @json(route('login')),
+            CRUDMitra: @json(route('CRUDMitra')),
+            CRUDObat: @json(route('CRUDObat'))
         };
     </script>
 </head>
@@ -31,10 +33,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <button type="button" class="btn  me-3 btn-hover fs-5 fw-bold" style="color: white">Mitra</button>
+                        <button type="button" class="btn  me-3 btn-hover fs-5 fw-bold" style="color: white" onclick="window.location.href= routes.CRUDMitra">Mitra</button>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn me-3 btn-hover fs-5 fw-bold" style="color: white;">Obat</button>
+                        <button type="button" class="btn me-3 btn-hover fs-5 fw-bold" style="color: white;" onclick="window.location.href= routes.CRUDObat">Obat</button>
                     </li>
                     <li class="nav-item">
                         <button type="button" class="btn btn-hover fs-5 fw-bold" style="color: white;" onclick="redirectToLogin()">Logout</button>

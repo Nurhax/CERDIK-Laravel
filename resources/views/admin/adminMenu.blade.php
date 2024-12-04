@@ -51,7 +51,7 @@
         <div class="w-100 p-3" style="background-color: white; height: 700px;">
             <div class="text-center">
                 <!--Nanti ganti routesnya ke main landing page-->
-                <a href="../Main/LandingPage.html" target="_blank">
+                <a href="{{route('landingPage')}}" target="_blank">
                     <img src="{{asset('storage/CerdikLogo.png')}}" alt="CerdikLogo" class="img-thumbnail" style="height: 600px; background-color: white; border: none;">
                 </a>
                 <h1 style="color: #2563EB;">Selamat Datang Admin!</h1>

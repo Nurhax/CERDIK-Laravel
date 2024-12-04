@@ -18,7 +18,7 @@ $(document).ready(function () {
     checkSelectedRows(); // mengecek berapa row yang dipilih
   });
 
-  $.getJSON("Scripts/mitra.json", function (data) {
+  $.getJSON("js/adminScripts/mitra.json", function (data) {
     //Meng Load JSON
     mitraData = data; // Menyetor data JSON untuk referensi
     const tbody = $("tbody");
