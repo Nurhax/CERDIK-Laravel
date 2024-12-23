@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link type="text/css" href="{{asset('css/adminStyles/CRUDmitra.css')}}" rel="stylesheet">
-    <title>Admin Cerdik</title>
+    <title>CERDIK-CRUD MITRA</title>
 </head>
 <body>
   <nav>
@@ -26,7 +26,15 @@
                     <a href = "{{ route('CRUDObat')}}">OBAT</a>
                 </li>
                 <li>
-                    <a href = "{{ route('login')}}">LOGOUT</a>
+                    @if(Auth::check())
+                        <a href="#" 
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            LOGOUT
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endif
                 </li>
             </ul>            
         </div>

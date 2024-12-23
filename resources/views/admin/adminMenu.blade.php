@@ -38,7 +38,15 @@
                         <a href = "{{ route('CRUDObat')}}">OBAT</a>
                     </li>
                     <li>
-                        <a href = "{{ route('login')}}">LOGOUT</a>
+                    @if(Auth::check())
+                        <a href="#" 
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            LOGOUT
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endif
                     </li>
                 </ul>            
             </div>
