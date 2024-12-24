@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ObatController;
 
 Route::get('/', function () {
     return view('main.landingPage');
@@ -25,9 +26,10 @@ Route::middleware('auth')->group(function(){
         return view('admin.CRUDMitra');
     })->name('CRUDMitra');
     
-    Route::get('/CRUDObat', function(){
-        return view('admin.CRUDObat');
-    })->name('CRUDObat');
+    Route::get('/CRUDObat', [ObatController::class, 'index'])->name('admin.CRUDObat');
+    Route::post('/CRUDObat/submit', [ObatController::class, 'store'])->name('admin.CRUDObat.submit');
+    Route::put('/obats/{obat}', [ObatController::class, 'update'])->name('admin.CRUDObat.update');
+    Route::delete('/obats/{obat}', [ObatController::class, 'destroy'])->name('admin.CRUDObat.destroy');
 });
 
 
@@ -45,6 +47,8 @@ Route::get('/panduan', function(){
     return view('main.panduan');
 })->name('panduan');
 
-Route::get('/tentangObat', function(){
-    return view('main.tentangObat');
-})->name('tentangObat');
+Route::get('/tentangObat', [ObatController::class, 'getAllObat'])->name('tentangObat');
+
+// Route::get('/tentangObat', function(){
+//     return view('main.tentangObat');
+// })->name('tentangObat');
