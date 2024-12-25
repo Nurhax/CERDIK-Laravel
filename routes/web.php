@@ -2,10 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CarouselController;
 
-Route::get('/', function () {
-    return view('main.landingPage');
-});
+Route::get('/', [CarouselController::class, 'index'])->name('landingPage');
 
 Route::middleware('guest')->group(function(){
 
@@ -33,9 +32,7 @@ Route::middleware('auth')->group(function(){
 
 
 //Group Routes Main
-Route::get('/landingPage', function(){
-    return view('main.landingPage');
-})->name('landingPage');
+Route::get('/landingPage', [CarouselController::class, 'index'])->name('landingPage');
 
 Route::get('/mitraKami', function(){
     return view('main.MitraKami');
