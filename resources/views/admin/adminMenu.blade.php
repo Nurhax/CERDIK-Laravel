@@ -35,7 +35,7 @@
                         <a href = "{{ route('CRUDMitra')}}">MITRA</a>
                     </li>
                     <li>
-                        <a href = "{{ route('CRUDObat')}}">OBAT</a>
+                        <a href = "{{ route('admin.CRUDObat')}}">OBAT</a>
                     </li>
                     <li>
                     @if(Auth::check())
