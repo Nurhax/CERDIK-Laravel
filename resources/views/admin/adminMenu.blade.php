@@ -32,7 +32,7 @@
                 </div>
                 <ul>
                     <li>
-                        <a href = "{{ route('CRUDMitra')}}">MITRA</a>
+                    <a href="{{ route('CRUDMitra.index') }}">MITRA</a>
                     </li>
                     <li>
                         <a href = "{{ route('CRUDObat')}}">OBAT</a>

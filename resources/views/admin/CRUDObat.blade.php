@@ -16,7 +16,7 @@
     <script>
         const routes = {
             adminMenu: @json(route('login')),
-            CRUDMitra: @json(route('CRUDMitra')),
+            CRUDMitra: @json(route('CRUDMitra.index')),
             CRUDObat: @json(route('CRUDObat'))
         };
     </script>

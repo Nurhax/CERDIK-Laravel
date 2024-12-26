@@ -1,12 +1,13 @@
 {
-    "mitra": [
-        {"id": "1", "nama": "Telkom University", "imgSrc": "storage/telu.png", "sejak": 2022, "link" :"https://telkomuniversity.ac.id" },
-        {"id": "2", "nama": "T-Mart", "imgSrc": "storage/tmart.jpg", "sejak": 2023, "link" :"https://canteen.telkomuniversity.ac.id/t-mart/"},
-        {"id": "3", "nama": "Cut-Cut RoadRage", "imgSrc": "storage/cutCut.png", "sejak": 2023, "link" :"https://nurhax.itch.io/cutcutroadrage"},
-        {"id": "4", "nama": "Souf n'Cake", "imgSrc": "storage/Souf.jpg", "sejak": 2024, "link" :"https://www.instagram.com/soufncake/"},
-        {"id": "5", "nama": "madjadev studios", "imgSrc": "storage/Madja.jpg", "sejak": 2022, "link" : "https://nurhax.itch.io"},
-        {"id": "6", "nama": "sendwish", "imgSrc": "storage/Sendwish.jpg", "sejak": 2024, "link" : "https://www.instagram.com/mentaico.official/"},
-        {"id": "7", "nama": "nurhax", "imgSrc": "storage/Nurhax.jpg", "sejak": 2019, "link" :"https://www.youtube.com/@Nurhax"},
-        {"id": "8", "nama": "mentaiCo.", "imgSrc": "storage/MentaiCo.jpg ", "sejak": 2024, "link" : "https://www.instagram.com/mentaico.official/"}
-    ]
+  "mitra": [
+    {
+      "id": 4,
+      "namaMitra": "dawda",
+      "sejak": 2134,
+      "link": "https://docs.google.com/document/d/1tprWwMmHEM7cQ_1kMVXVNOA57btc3rIZ5TBy7Bl3F7A/edit?tab=t.0",
+      "logo": "uploads/qcudFlOK1VTO3KQmlIobAzFhMSVQ6ecVmHC4rTZK.jpg",
+      "created_at": "2024-12-25T23:53:33.000Z",
+      "updated_at": "2024-12-26T02:23:57.000Z"
+    }
+  ]
 }
