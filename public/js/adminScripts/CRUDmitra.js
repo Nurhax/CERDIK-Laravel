@@ -23,7 +23,7 @@ $(document).ready(function () {
 
     function fetchMitraData() {
         $.ajax({
-            url: 'http://localhost:3000/api/refresh-mitra',
+            url: 'http://localhost:3001/api/refresh-mitra',
             method: 'GET',
             success: function (response) {
                 mitraData = response.mitraData;
@@ -35,11 +35,11 @@ $(document).ready(function () {
                         const row = `
                             <tr data-id="${mitra.id}">
                                 <th scope="row">${index + 1}</th>
-                                <td>${mitra.namaMitra}</td>
+                                <td>${mitra.nama}</td>
                                 <td>${mitra.sejak}</td>
                                 <td>
                                     <a href="${mitra.link}" target="_blank">
-                                        <img src="/storage/${mitra.logo}" class="logo-image" style="height: 40px;">
+                                        <img src="/storage/${mitra.img_src}" class="logo-image" style="height: 40px;">
                                     </a>
                                 </td>
                                 <td><input type="checkbox" class="custom-checkbox" style="display: none;"></td>
@@ -97,7 +97,7 @@ $(document).ready(function () {
         $("#modalUpdateButton").text("Update Mitra").show();
 
         if (selectedRowData) {
-            $("#inputNamaMitra").val(selectedRowData.namaMitra);
+            $("#inputNamaMitra").val(selectedRowData.nama);
             $("#inputSejak").val(selectedRowData.sejak);
             $("#inputLink").val(selectedRowData.link);
             $("#imagePreview").attr("src", `/storage/${selectedRowData.logo}`).show();

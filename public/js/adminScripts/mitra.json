@@ -1,103 +1,112 @@
 {
   "mitra": [
     {
-      "id": 8,
-      "namaMitra": "telkom",
-      "sejak": 2034,
-      "link": "https://telkomuniversity.ac.id/",
-      "logo": "uploads/CRRaxGOz6vKpsVY6RevXPvrBddd1svmZeWGmNPnE.png",
-      "created_at": "2024-12-27T01:33:41.000Z",
-      "updated_at": "2024-12-27T01:33:41.000Z"
-    },
-    {
       "id": 9,
-      "namaMitra": "telkom",
+      "nama": "telkom",
       "sejak": 2034,
       "link": "https://telkomuniversity.ac.id/",
-      "logo": "uploads/7ZJIXzelKFwf1kk467wPXOzrOgyAET8tr5ucMcQ1.png",
-      "created_at": "2024-12-27T01:35:29.000Z",
-      "updated_at": "2024-12-27T01:35:29.000Z"
+      "img_src": "uploads/7ZJIXzelKFwf1kk467wPXOzrOgyAET8tr5ucMcQ1.png",
+      "created_at": "2024-12-26T18:35:29.000Z",
+      "updated_at": "2024-12-26T18:35:29.000Z"
     },
     {
       "id": 10,
-      "namaMitra": "telkom",
+      "nama": "telkom",
       "sejak": 2034,
       "link": "https://telkomuniversity.ac.id/",
-      "logo": "uploads/l3r0D5NV4Z5g9t0VvHoaKYmaja3D72n1mP2k4mZd.png",
-      "created_at": "2024-12-27T01:39:36.000Z",
-      "updated_at": "2024-12-27T01:39:36.000Z"
+      "img_src": "uploads/l3r0D5NV4Z5g9t0VvHoaKYmaja3D72n1mP2k4mZd.png",
+      "created_at": "2024-12-26T18:39:36.000Z",
+      "updated_at": "2024-12-26T18:39:36.000Z"
     },
     {
       "id": 11,
-      "namaMitra": "test",
+      "nama": "test",
       "sejak": 2222,
       "link": "https://www.instagram.com/",
-      "logo": "uploads/NjokRVO8z8pHtjWEkXSn4j08j3yaB9cOxsKCy9OX.png",
-      "created_at": "2024-12-27T01:45:50.000Z",
-      "updated_at": "2024-12-27T01:45:50.000Z"
+      "img_src": "uploads/NjokRVO8z8pHtjWEkXSn4j08j3yaB9cOxsKCy9OX.png",
+      "created_at": "2024-12-26T18:45:50.000Z",
+      "updated_at": "2024-12-26T18:45:50.000Z"
     },
     {
       "id": 12,
-      "namaMitra": "farel",
+      "nama": "farel",
       "sejak": 2023,
       "link": "https://www.youtube.com/",
-      "logo": "uploads/k5qlqa7QGanLxZFhQKeIBo9OyOp99IV0zqE4oztN.png",
-      "created_at": "2024-12-27T02:11:09.000Z",
-      "updated_at": "2024-12-27T02:11:09.000Z"
+      "img_src": "uploads/k5qlqa7QGanLxZFhQKeIBo9OyOp99IV0zqE4oztN.png",
+      "created_at": "2024-12-26T19:11:09.000Z",
+      "updated_at": "2024-12-26T19:11:09.000Z"
     },
     {
       "id": 13,
-      "namaMitra": "gemkiyr",
+      "nama": "gemkiyr",
       "sejak": 2023,
       "link": "https://www.youtube.com/",
-      "logo": "uploads/HgPTtmgHnH6rqmHiwIkpMVed1bQvSdJkXgebpq5F.png",
-      "created_at": "2024-12-27T02:11:23.000Z",
-      "updated_at": "2024-12-27T02:11:23.000Z"
+      "img_src": "uploads/HgPTtmgHnH6rqmHiwIkpMVed1bQvSdJkXgebpq5F.png",
+      "created_at": "2024-12-26T19:11:23.000Z",
+      "updated_at": "2024-12-26T19:11:23.000Z"
     },
     {
       "id": 14,
-      "namaMitra": "tessss",
+      "nama": "tessss",
       "sejak": 2034,
       "link": "https://www.instagram.com/",
-      "logo": "uploads/kGWKqHC1dpFsFjvQpzzeqTop8SGDc6b6xMGJNr7A.png",
-      "created_at": "2024-12-27T02:13:23.000Z",
-      "updated_at": "2024-12-27T02:13:23.000Z"
+      "img_src": "uploads/kGWKqHC1dpFsFjvQpzzeqTop8SGDc6b6xMGJNr7A.png",
+      "created_at": "2024-12-26T19:13:23.000Z",
+      "updated_at": "2024-12-26T19:13:23.000Z"
     },
     {
       "id": 15,
-      "namaMitra": "fwf",
+      "nama": "fwf",
       "sejak": 2222,
       "link": "https://www.youtube.com/",
-      "logo": "uploads/GDnStimpcHKoA4vvsx5KAhmCOZnoZX2FlCNnEmSV.png",
-      "created_at": "2024-12-27T02:13:57.000Z",
-      "updated_at": "2024-12-27T02:13:57.000Z"
+      "img_src": "uploads/GDnStimpcHKoA4vvsx5KAhmCOZnoZX2FlCNnEmSV.png",
+      "created_at": "2024-12-26T19:13:57.000Z",
+      "updated_at": "2024-12-26T19:13:57.000Z"
     },
     {
       "id": 16,
-      "namaMitra": "caeggeg",
+      "nama": "caeggeg",
       "sejak": 2222,
       "link": "https://www.instagram.com/",
-      "logo": "uploads/YwFiRkDWS9m5qdQK2gzvkT9mkuHdqrJ59DTFBTQl.png",
-      "created_at": "2024-12-27T02:14:09.000Z",
-      "updated_at": "2024-12-27T02:14:09.000Z"
+      "img_src": "uploads/YwFiRkDWS9m5qdQK2gzvkT9mkuHdqrJ59DTFBTQl.png",
+      "created_at": "2024-12-26T19:14:09.000Z",
+      "updated_at": "2024-12-26T19:14:09.000Z"
     },
     {
       "id": 17,
-      "namaMitra": "test",
+      "nama": "test",
       "sejak": 2034,
       "link": "https://www.instagram.com/",
-      "logo": "uploads/4PKLPuHYTqWUBDCgHqMdjFaIgq21xWD9HJrSPSTx.png",
-      "created_at": "2024-12-27T02:14:23.000Z",
-      "updated_at": "2024-12-27T02:14:23.000Z"
+      "img_src": "uploads/4PKLPuHYTqWUBDCgHqMdjFaIgq21xWD9HJrSPSTx.png",
+      "created_at": "2024-12-26T19:14:23.000Z",
+      "updated_at": "2024-12-26T19:14:23.000Z"
     },
     {
       "id": 18,
-      "namaMitra": "telkom",
+      "nama": "telkom",
       "sejak": 2012,
       "link": "https://www.instagram.com/",
-      "logo": "uploads/jjf55p0qbjz5nyPN0doaxDSDUYrIVmJ4bBJKHIQ8.png",
-      "created_at": "2024-12-27T02:14:32.000Z",
-      "updated_at": "2024-12-27T02:14:32.000Z"
+      "img_src": "uploads/jjf55p0qbjz5nyPN0doaxDSDUYrIVmJ4bBJKHIQ8.png",
+      "created_at": "2024-12-26T19:14:32.000Z",
+      "updated_at": "2024-12-26T19:14:32.000Z"
+    },
+    {
+      "id": 19,
+      "nama": "NekoArc",
+      "sejak": 2022,
+      "link": "https://fategrandorder.fandom.com/wiki/Fate/Grand_Order_Wikia",
+      "img_src": "uploads/NdJgaxraonJUbVvArb61zNTlZO2wMq9QpqtEp6M7.gif",
+      "created_at": "2024-12-27T06:42:08.000Z",
+      "updated_at": "2024-12-27T06:42:08.000Z"
+    },
+    {
+      "id": 20,
+      "nama": "Hatsune Miku",
+      "sejak": 2025,
+      "link": "https://id.wikipedia.org/wiki/Hatsune_Miku",
+      "img_src": "uploads/O9XTmINZbgevlwuBgmBiwxhGge6ASSZ8CbYHbcxR.png",
+      "created_at": "2024-12-27T06:42:51.000Z",
+      "updated_at": "2024-12-27T06:42:51.000Z"
     }
   ]
 }

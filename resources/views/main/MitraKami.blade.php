@@ -29,7 +29,7 @@
                 @foreach ($mitraData as $mitra)
                     <div class="carousel-item">
                         <a href="{{ $mitra->link }}" target="_blank">
-                            <img src="{{ asset('storage/' . $mitra->logo) }}" alt="{{ $mitra->namaMitra }} Logo">
+                            <img src="{{ asset('storage/' . $mitra->img_src) }}" alt="{{ $mitra->namaMitra }} Logo">
                         </a>
                         <p>{{ $mitra->namaMitra }}</p>
                     </div>

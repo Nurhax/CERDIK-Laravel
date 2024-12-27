@@ -16,7 +16,7 @@
     <script>
         const routes = {
             adminMenu: @json(route('login')),
-            CRUDObat: @json(route('admin.CRUDObat'))
+            CRUDObat: @json(route('admin.CRUDObat')),
             CRUDMitra: @json(route('CRUDMitra.index')),
         };
     </script>
@@ -33,13 +33,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <button type="button" class="btn  me-3 btn-hover fs-5 fw-bold" style="color: white" onclick="window.location.href= routes.CRUDMitra">Mitra</button>
+                        <button type="button" class="btn  me-3 btn-hover fs-5 fw-bold" style="color: white" onclick="window.location.href= routes.CRUDMitra">MITRA</button>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn me-3 btn-hover fs-5 fw-bold" style="color: white;" onclick="window.location.href= routes.CRUDObat">Obat</button>
+                        <button type="button" class="btn me-3 btn-hover fs-5 fw-bold" style="color: white;" onclick="window.location.href= routes.CRUDObat">OBAT</button>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-hover fs-5 fw-bold" style="color: white;" onclick="redirectToLogin()">Logout</button>
+                        @if(Auth::check())
+                        <a href="#" class="btn me-3 btn-hover fs-5 fw-bold" style="color: white;"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            LOGOUT
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        @endif
                     </li>
                 </ul>
             </div>

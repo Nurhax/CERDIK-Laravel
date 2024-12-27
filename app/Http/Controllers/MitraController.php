@@ -19,7 +19,7 @@ class MitraController extends Controller
     {
 
         try {
-            $response = $this->client->get('http://localhost:3000/js/adminScripts/mitra.json', [
+            $response = $this->client->get('http://localhost:3001/api/refresh-mitra', [
                 'verify' => false, 
             ]);
     
@@ -37,26 +37,40 @@ class MitraController extends Controller
         }
     }
 
+    public function getAllData()
+    {
+        try {
+            // Fetch all Mitra data from the database
+            $mitraData = Mitra::all();
+
+            // Return the view with the mitra data
+            return view('main.mitraKami', ['mitraData' => $mitraData]);
+
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Unable to fetch Mitra data', 'message' => $e->getMessage()], 500);
+        }
+    }
+
     public function store(Request $request)
     {
         try {
             \Log::info('Request Data:', $request->all());
 
             $validated = $request->validate([
-                'namaMitra' => 'required|string|max:255',
+                'nama' => 'required|string|max:255',
                 'sejak' => 'required|string|max:255',
                 'link' => 'required|url',
-                'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'img_src' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
 
             $mitra = new Mitra();
-            $mitra->namaMitra = $validated['namaMitra'];
+            $mitra->nama = $validated['nama'];
             $mitra->sejak = $validated['sejak'];
             $mitra->link = $validated['link'];
 
-            if ($request->hasFile('logo')) {
-                $logoPath = $request->file('logo')->store('uploads', 'public');
-                $mitra->logo = $logoPath;
+            if ($request->hasFile('img_src')) {
+                $logoPath = $request->file('img_src')->store('uploads', 'public');
+                $mitra->img_src = $logoPath;
             }
 
             $mitra->save();
@@ -79,7 +93,7 @@ class MitraController extends Controller
     public function refreshMitra()
     {
         try {
-            $response = $this->client->get('http://localhost:3000/api/refresh-mitra', [
+            $response = $this->client->get('http://localhost:3001/api/refresh-mitra', [
                 'verify' => false, 
             ]);
 
@@ -97,23 +111,23 @@ class MitraController extends Controller
 {
     try {
         $validated = $request->validate([
-            'namaMitra' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
             'sejak' => 'required|string|max:255',
             'link' => 'required|url',
-            'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'img_src' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $mitra = Mitra::findOrFail($id);
 
-        if ($request->hasFile('logo')) {
-            if ($mitra->logo && Storage::disk('public')->exists($mitra->logo)) {
-                Storage::disk('public')->delete($mitra->logo);
+        if ($request->hasFile('img_src')) {
+            if ($mitra->img_src && Storage::disk('public')->exists($mitra->img_src)) {
+                Storage::disk('public')->delete($mitra->img_src);
             }
 
-            $logoPath = $request->file('logo')->store('uploads', 'public');
-            $mitra->logo = $logoPath;
+            $logoPath = $request->file('img_src')->store('uploads', 'public');
+            $mitra->img_src = $logoPath;
         }
 
-        $mitra->namaMitra = $validated['namaMitra'];
+        $mitra->nama = $validated['nama'];
         $mitra->sejak = $validated['sejak'];
         $mitra->link = $validated['link'];
         $mitra->save();
@@ -137,8 +151,8 @@ class MitraController extends Controller
         try {
             $mitra = Mitra::findOrFail($id);
 
-            if ($mitra->logo && Storage::disk('public')->exists($mitra->logo)) {
-                Storage::disk('public')->delete($mitra->logo);
+            if ($mitra->img_src && Storage::disk('public')->exists($mitra->img_src)) {
+                Storage::disk('public')->delete($mitra->img_src);
             }
             $mitra->delete();
 
