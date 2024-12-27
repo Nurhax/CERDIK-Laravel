@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\MitraController;
 
-Route::get('/', function () {
-    return view('main.landingPage');
-});
+
+Route::get('/', [CarouselController::class, 'index'])->name('landingPage');
 
 // Group Routes Admin
 Route::get('/AdminMenu', function(){
@@ -28,11 +29,8 @@ Route::get('get-mitra-data', [MitraController::class, 'index']); // Route to get
 Route::get('/refresh-mitra', [MitraController::class, 'refreshMitra']); // Route to refresh mitra data
 Route::delete('api/delete-mitra/{id}', [MitraController::class, 'destroy'])->name('CRUDMitra.destroy'); // Custom delete route
 
-// Group Routes Main
-Route::get('/landingPage', function(){
-    return view('main.landingPage');
-})->name('landingPage');
 
+Route::get('/landingPage', [CarouselController::class, 'index'])->name('landingPage');
 Route::get('/mitraKami', [MitraController::class, 'getAllData'])->name('mitraKami');
 
 // Route::get('/mitraKami', function(){
