@@ -9,6 +9,7 @@ use App\Http\Controllers\MitraController;
 
 
 
+
 Route::get('/', [CarouselController::class, 'index'])->name('landingPage');
 
 // Group Routes Admin
@@ -24,6 +25,20 @@ Route::get('/CRUDObat', function(){
     return view('admin.CRUDObat');
 })->name('CRUDObat');
 
+Route::get('/Login', [AdminController::class, 'tampilLogin'])->name('login');
+Route::post('/Login/Submit', [AdminController::class, 'submitLogin'])->name('login.submit');
+Route::post('/Logout', [AdminController::class, 'logout'])->name('logout');
+
+Route::middleware('auth')->group(function(){
+    //Group Routes Admin
+    Route::get('/AdminMenu', function(){
+        return view('admin.adminMenu');
+    })->name('adminMenu');
+
+    Route::get('/CRUDMitra', function(){
+        return view('admin.CRUDMitra');
+    })->name('CRUDMitra');
+    
     Route::get('/CRUDObat', [ObatController::class, 'index'])->name('admin.CRUDObat');
     Route::post('/CRUDObat/submit', [ObatController::class, 'store'])->name('admin.CRUDObat.submit');
     Route::put('/obats/{obat}', [ObatController::class, 'update'])->name('admin.CRUDObat.update');
@@ -59,3 +74,9 @@ Route::get('/tentangObat', [ObatController::class, 'getAllObat'])->name('tentang
 //     return view('main.tentangObat');
 // })->name('tentangObat');
 
+
+Route::get('/tentangObat', [ObatController::class, 'getAllObat'])->name('tentangObat');
+
+// Route::get('/tentangObat', function(){
+//     return view('main.tentangObat');
+// })->name('tentangObat');
