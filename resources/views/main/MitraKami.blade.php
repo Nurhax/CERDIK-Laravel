@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CERDIKIN-AJA</title>
     <link rel="stylesheet" href="{{asset('css/mainStyles/MitraKami.css')}}">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -27,21 +26,20 @@
         <h1>MITRA KAMI</h1>
         <div class="carousel-container">
             <div class="carousel-slide">
-                <div class="carousel-item">
-                    <img src="https://onlinelearning.telkomuniversity.ac.id/pluginfile.php/1/blog/post/184/Logo%20Telkom%20University%20%281%29.png"
-                        alt="Telkom University Logo">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://www.telkom.co.id/data/image_upload/page/1594108255409_compress_logo%20telkom%20indonesia.png"
-                        alt="Telkom Indonesia Logo">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://studentaffairs.telkomuniversity.ac.id/wp-content/uploads/2023/01/cropped-logo-ditmawa-horizontal.png"
-                        alt="Direktorat Kemahasiswaan Logo">
-                </div>
+                @foreach ($mitraData as $mitra)
+                    <div class="carousel-item">
+                        <a href="{{ $mitra->link }}" target="_blank">
+                            <img src="{{ asset('storage/' . $mitra->logo) }}" alt="{{ $mitra->namaMitra }} Logo">
+                        </a>
+                        <p>{{ $mitra->namaMitra }}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
+
     </div>
+
+
     <div class="social-media">
         <h2>SOCIAL MEDIA KAMI</h2>
         <div class="social-icons">
@@ -59,7 +57,6 @@
             </a>
         </div>
     </div>
-    <script src="{{asset('storage/js/mainScripts/MitraKami.js')}}"></script>
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -68,7 +65,7 @@
             <div class="footer-links">
                 <div class="footer-column">
                     <h5>Mitra Kami</h5>
-                        <div class="rata">
+                    <div class="rata">
                         <li><a href="https://www.instagram.com/telkomuniversity/">Telkom University</a></li>
                         <li><a href="https://www.instagram.com/tmart.official/">T-Mart</a></li>
                         <li><a href="https://nurhax.itch.io/cutcutroadrage">Cut Cut Road Rage</a></li>
@@ -78,7 +75,7 @@
                         <li><a href="https://www.instagram.com/lets.sendwish/">Sendwish</a></li>
                         <li><a href="https://nurhax.itch.io/">Madjadev</a></li>
                         <li><a href="{{route('login')}}" class="text-white">Admin</a></li>
-                     </div>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h5>About Us</h5>
@@ -86,11 +83,15 @@
                         <li><a href="#">Yang Membuat Web ini :</a></li>
                         <li><a href="https://www.instagram.com/alifzadanir/">Alif Adani Rahmat - 1302220114</a></li>
                         <li><a href="https://www.instagram.com/nurhax.12/">Muhammad Iqbal Nurhaq - 1302223050</a></li>
-                        <li><a href="https://www.instagram.com/gabrielleadsense/">Gabrielle Adsense Felime - 1302220053</a></li>
-                        <li><a href="https://www.instagram.com/farisazh_/">Faris Azhar Dwiputra -  1302223123</a></li>
-                        <li><a href="https://www.instagram.com/farahamaliaa.a/">Farah Amalia Putra - 1302223137 </a></li>
-                        <li><a href="https://www.instagram.com/farrelhaykalgiffarii/">Farrel Haykal Giffari - 1302220064</a></li>
-                        <li><a href="https://www.instagram.com/prabustialwan/">Prabusti Alwan Fauzan - 1302223102</a></li>
+                        <li><a href="https://www.instagram.com/gabrielleadsense/">Gabrielle Adsense Felime -
+                                1302220053</a></li>
+                        <li><a href="https://www.instagram.com/farisazh_/">Faris Azhar Dwiputra - 1302223123</a></li>
+                        <li><a href="https://www.instagram.com/farahamaliaa.a/">Farah Amalia Putra - 1302223137 </a>
+                        </li>
+                        <li><a href="https://www.instagram.com/farrelhaykalgiffarii/">Farrel Haykal Giffari -
+                                1302220064</a></li>
+                        <li><a href="https://www.instagram.com/prabustialwan/">Prabusti Alwan Fauzan - 1302223102</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -101,11 +102,18 @@
                 </div>
             </div>
             <div class="footer-apps">
-                <a href="#"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png?hl=id" style="size: 60px;" alt="Get it on Google Play"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png" style="size: 10px;" alt="Download on the App Store"></a>
+                <a href="#"><img
+                        src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png?hl=id"
+                        style="size: 60px;" alt="Get it on Google Play"></a>
+                <a href="#"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/1280px-Download_on_the_App_Store_Badge.svg.png"
+                        style="size: 10px;" alt="Download on the App Store"></a>
             </div>
         </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{asset('js/mainScripts/MitraKami.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

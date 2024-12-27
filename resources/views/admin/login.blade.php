@@ -17,20 +17,14 @@
             <h1>Admin Login</h1>
         </div>
         <div class="InputForm">
-            <form action="{{ route('login.submit') }}" method="post">
-                @csrf
-                <h2>Email Address</h2>
-                <input type="text" style="height: 25px;" id="email" name="email">
-                <br>
-                <h2>Password</h2>
-                <input type="password" style="height: 25px;" id="password" name="password">
-                <div class="LoginButton">
-                <button type="submit" style="font-size: 25px; border: none; border-radius: 5px; color: #2569FF;">LOGIN</button>
-                </div>
-            </form>
-            @if(session('failed'))
-            <h3 class = "text-center text-danger">{{session('failed')}}</h3>
-            @endif
+            <h2>Username</h2>
+            <input type="text" style="height: 25px;" id="Username">
+            <br>
+            <h2>Password</h2>
+            <input type="password" style="height: 25px;" id="Password">
+            <div class="LoginButton">
+            <button type="button" style="font-size: 25px; border: none; border-radius: 5px; color: #2569FF;" onclick="HideLogin()">LOGIN</button>
+            </div>
         </div>
         
     </div>

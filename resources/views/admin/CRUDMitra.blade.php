@@ -62,7 +62,6 @@
     <div class="container d-flex justify-content-end">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add New</button>
     </div>
-
 <!-- MODAL TAMBAH OBAT -->
 <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
     <div class="modal-dialog">

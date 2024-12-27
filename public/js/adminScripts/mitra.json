@@ -1,12 +1,103 @@
 {
-    "mitra": [
-        {"id": "1", "nama": "Telkom University", "imgSrc": "storage/telu.png", "sejak": 2022, "link" :"https://telkomuniversity.ac.id" },
-        {"id": "2", "nama": "T-Mart", "imgSrc": "storage/tmart.jpg", "sejak": 2023, "link" :"https://canteen.telkomuniversity.ac.id/t-mart/"},
-        {"id": "3", "nama": "Cut-Cut RoadRage", "imgSrc": "storage/cutCut.png", "sejak": 2023, "link" :"https://nurhax.itch.io/cutcutroadrage"},
-        {"id": "4", "nama": "Souf n'Cake", "imgSrc": "storage/Souf.jpg", "sejak": 2024, "link" :"https://www.instagram.com/soufncake/"},
-        {"id": "5", "nama": "madjadev studios", "imgSrc": "storage/Madja.jpg", "sejak": 2022, "link" : "https://nurhax.itch.io"},
-        {"id": "6", "nama": "sendwish", "imgSrc": "storage/Sendwish.jpg", "sejak": 2024, "link" : "https://www.instagram.com/mentaico.official/"},
-        {"id": "7", "nama": "nurhax", "imgSrc": "storage/Nurhax.jpg", "sejak": 2019, "link" :"https://www.youtube.com/@Nurhax"},
-        {"id": "8", "nama": "mentaiCo.", "imgSrc": "storage/MentaiCo.jpg ", "sejak": 2024, "link" : "https://www.instagram.com/mentaico.official/"}
-    ]
+  "mitra": [
+    {
+      "id": 8,
+      "namaMitra": "telkom",
+      "sejak": 2034,
+      "link": "https://telkomuniversity.ac.id/",
+      "logo": "uploads/CRRaxGOz6vKpsVY6RevXPvrBddd1svmZeWGmNPnE.png",
+      "created_at": "2024-12-27T01:33:41.000Z",
+      "updated_at": "2024-12-27T01:33:41.000Z"
+    },
+    {
+      "id": 9,
+      "namaMitra": "telkom",
+      "sejak": 2034,
+      "link": "https://telkomuniversity.ac.id/",
+      "logo": "uploads/7ZJIXzelKFwf1kk467wPXOzrOgyAET8tr5ucMcQ1.png",
+      "created_at": "2024-12-27T01:35:29.000Z",
+      "updated_at": "2024-12-27T01:35:29.000Z"
+    },
+    {
+      "id": 10,
+      "namaMitra": "telkom",
+      "sejak": 2034,
+      "link": "https://telkomuniversity.ac.id/",
+      "logo": "uploads/l3r0D5NV4Z5g9t0VvHoaKYmaja3D72n1mP2k4mZd.png",
+      "created_at": "2024-12-27T01:39:36.000Z",
+      "updated_at": "2024-12-27T01:39:36.000Z"
+    },
+    {
+      "id": 11,
+      "namaMitra": "test",
+      "sejak": 2222,
+      "link": "https://www.instagram.com/",
+      "logo": "uploads/NjokRVO8z8pHtjWEkXSn4j08j3yaB9cOxsKCy9OX.png",
+      "created_at": "2024-12-27T01:45:50.000Z",
+      "updated_at": "2024-12-27T01:45:50.000Z"
+    },
+    {
+      "id": 12,
+      "namaMitra": "farel",
+      "sejak": 2023,
+      "link": "https://www.youtube.com/",
+      "logo": "uploads/k5qlqa7QGanLxZFhQKeIBo9OyOp99IV0zqE4oztN.png",
+      "created_at": "2024-12-27T02:11:09.000Z",
+      "updated_at": "2024-12-27T02:11:09.000Z"
+    },
+    {
+      "id": 13,
+      "namaMitra": "gemkiyr",
+      "sejak": 2023,
+      "link": "https://www.youtube.com/",
+      "logo": "uploads/HgPTtmgHnH6rqmHiwIkpMVed1bQvSdJkXgebpq5F.png",
+      "created_at": "2024-12-27T02:11:23.000Z",
+      "updated_at": "2024-12-27T02:11:23.000Z"
+    },
+    {
+      "id": 14,
+      "namaMitra": "tessss",
+      "sejak": 2034,
+      "link": "https://www.instagram.com/",
+      "logo": "uploads/kGWKqHC1dpFsFjvQpzzeqTop8SGDc6b6xMGJNr7A.png",
+      "created_at": "2024-12-27T02:13:23.000Z",
+      "updated_at": "2024-12-27T02:13:23.000Z"
+    },
+    {
+      "id": 15,
+      "namaMitra": "fwf",
+      "sejak": 2222,
+      "link": "https://www.youtube.com/",
+      "logo": "uploads/GDnStimpcHKoA4vvsx5KAhmCOZnoZX2FlCNnEmSV.png",
+      "created_at": "2024-12-27T02:13:57.000Z",
+      "updated_at": "2024-12-27T02:13:57.000Z"
+    },
+    {
+      "id": 16,
+      "namaMitra": "caeggeg",
+      "sejak": 2222,
+      "link": "https://www.instagram.com/",
+      "logo": "uploads/YwFiRkDWS9m5qdQK2gzvkT9mkuHdqrJ59DTFBTQl.png",
+      "created_at": "2024-12-27T02:14:09.000Z",
+      "updated_at": "2024-12-27T02:14:09.000Z"
+    },
+    {
+      "id": 17,
+      "namaMitra": "test",
+      "sejak": 2034,
+      "link": "https://www.instagram.com/",
+      "logo": "uploads/4PKLPuHYTqWUBDCgHqMdjFaIgq21xWD9HJrSPSTx.png",
+      "created_at": "2024-12-27T02:14:23.000Z",
+      "updated_at": "2024-12-27T02:14:23.000Z"
+    },
+    {
+      "id": 18,
+      "namaMitra": "telkom",
+      "sejak": 2012,
+      "link": "https://www.instagram.com/",
+      "logo": "uploads/jjf55p0qbjz5nyPN0doaxDSDUYrIVmJ4bBJKHIQ8.png",
+      "created_at": "2024-12-27T02:14:32.000Z",
+      "updated_at": "2024-12-27T02:14:32.000Z"
+    }
+  ]
 }
