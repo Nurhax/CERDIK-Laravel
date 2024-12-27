@@ -60,29 +60,33 @@
     <section id="banner" class="bg-primary text-white text-center py-5">
         <div class="container">
             <h1>CERDIK</h1>
-            <div id="carouselCerdik" class="carousel slide" data-bs-ride="carousel">
-                <!-- Carousel Indicators -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselCerdik" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselCerdik" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselCerdik" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators">
+                        @foreach ($carousels as $key => $carousel)
+                            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="{{ $key }}" class="{{ $key === 0 ? 'active' : '' }}" aria-label="Slide {{ $key + 1 }}"></button>
+                        @endforeach
+                    </div>
 
-                <!-- Carousel Items -->
-                <div class="carousel-inner" style="padding-bottom: 60px;">
-                    <div class="carousel-item active">
-                        <p>Khawatir lupa obat?</p>
-                        <p>Cerdikin Aja!</p>
+                    <!-- Carousel Items -->
+                    <div class="carousel-inner">
+                        @foreach ($carousels as $key => $carousel)
+                            <div class="carousel-item {{ $key === 0 ? 'active' : '' }} mb-5">
+                                <h3>{{ $carousel->title }}</h3>
+                                <p>{!! nl2br(e($carousel->description)) !!}</p>
+                            </div>
+                        @endforeach
                     </div>
-                    <div class="carousel-item">
-                        <p><strong>Fitur Unggulan Kami :</strong></p>
-                        <p><strong>1. Kostumisasi Notifikasi</strong></p>
-                        <p><strong>2. CRUD Obat yang akurat</strong></p>
-                        <p><strong>3. Jadwal Obat yang akurat</strong></p>
-                    </div>
-                    <div class="carousel-item">
-                        <p>Ingat obat, ingat CERDIK!</p>
-                    </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
             </div>
             <a href="https://play.google.com/store/games?device=windows" class="d-block mt-4">

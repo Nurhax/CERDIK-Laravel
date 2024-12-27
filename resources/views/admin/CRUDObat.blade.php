@@ -16,8 +16,8 @@
     <script>
         const routes = {
             adminMenu: @json(route('login')),
+            CRUDObat: @json(route('admin.CRUDObat'))
             CRUDMitra: @json(route('CRUDMitra.index')),
-            CRUDObat: @json(route('CRUDObat'))
         };
     </script>
 </head>
@@ -55,24 +55,41 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Add New</button>
     </div>
 
-     <!-- MODAL TAMBAH OBAT-->
-    <div class="modal" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+<!-- MODAL TAMBAH OBAT -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="{{ route('admin.CRUDObat.submit') }}" method="POST">
+                @csrf
                 <div class="modal-header">
                     <h5 class="modal-title" id="addModalLabel">Tambah Obat Baru</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <input type="text" id="namaObatBaru" class="form-control" placeholder="Nama Obat">
+                    <!-- Nama Obat -->
+                    <div class="mb-3">
+                        <label for="namaObatBaru" class="form-label">Nama Obat</label>
+                        <input type="text" id="namaObatBaru" name="nama_obat" class="form-control" placeholder="Masukkan nama obat" required>
+                    </div>
+                    <!-- Deskripsi -->
+                    <div class="mb-3">
+                        <label for="deskripsiObat" class="form-label">Deskripsi</label>
+                        <textarea id="deskripsiObat" name="deskripsi" class="form-control" rows="3" placeholder="Masukkan deskripsi obat" required></textarea>
+                    </div>
+                    <!-- URL Gambar -->
+                    <div class="mb-3">
+                        <label for="urlGambarObat" class="form-label">URL Gambar</label>
+                        <input type="url" id="urlGambarObat" name="url_gambar" class="form-control" placeholder="Masukkan URL gambar" required>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="tambahObat()">Save Change</button>
-                </div> 
-            </div>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
     <!-- TABLE OBAT-->    
     <div class="container mt-5" style="font-family: Arial, Helvetica, sans-serif;">
@@ -81,11 +98,78 @@
                 <tr>
                     <th scope="col">No</th>
                     <th scope="col">Nama Obat</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">Deskripsi</th>
+                    <th scope="col">Url_Gambar</th>
+                    <th scope="col" colspan="2" class="text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                @if(empty($obats))
+                    <td colspan = "5" class="text-center table-warning">Tidak Ada Data</td>
+                @else
+                    @foreach($obats as $obat)
+                    <tr>
+                        <td>{{$obat['id']}}</td>
+                        <td>{{$obat['nama_obat']}}</td>
+                        <td>{{$obat['deskripsi']}}</td>
+                        <td><img src="{{$obat['url_gambar']}}" alt="{{$obat['nama_obat']}}"></td>
+                        <td>
+                            <div class="container d-flex justify-content-end">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal{{$obat['id']}}">Edit</button>
+                            </div>
+
+                            <!-- MODAL EDIT OBAT -->
+                            <div class="modal fade" id="editModal{{$obat['id']}}" tabindex="-1" aria-labelledby="editModalLabel{{$obat['id']}}" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form action="{{ route('admin.CRUDObat.update', $obat['id']) }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="editModalLabel{{$obat['id']}}">Edit Obat</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- Nama Obat -->
+                                                <div class="mb-3">
+                                                    <label for="namaObatBaru{{$obat['id']}}" class="form-label">Nama Obat</label>
+                                                    <input type="text" id="namaObatBaru{{$obat['id']}}" name="nama_obat" class="form-control" value="{{$obat['nama_obat']}}" required>
+                                                </div>
+                                                <!-- Deskripsi -->
+                                                <div class="mb-3">
+                                                    <label for="deskripsiObat{{$obat['id']}}" class="form-label">Deskripsi</label>
+                                                    <textarea id="deskripsiObat{{$obat['id']}}" name="deskripsi" class="form-control" rows="3" required>{{$obat['deskripsi']}}</textarea>
+                                                </div>
+                                                <!-- URL Gambar -->
+                                                <div class="mb-3">
+                                                    <label for="urlGambarObat{{$obat['id']}}" class="form-label">URL Gambar</label>
+                                                    <input type="url" id="urlGambarObat{{$obat['id']}}" name="url_gambar" class="form-control" value="{{$obat['url_gambar']}}" required>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            
+                        <form action="{{ route('admin.CRUDObat.destroy', $obat['id']) }}" method="POST" style="display: inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-secondary" 
+                                        onclick="return confirm('Are you sure you want to delete this item?');">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                @endif
+                <!-- <tr>
                     <th scope="row">1</th>
                     <td>Paracetamol</td>
                     <td>
@@ -95,13 +179,13 @@
                             <li><a class="dropdown-item" href="#" >Delete</a></li>
                         </ul>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
 
     <!-- MODAL EDIT OBAT-->
-    <div class="modal" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <!-- <div class="modal" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -117,7 +201,7 @@
                 <button type="button" class="btn btn-primary" onclick="simpanEditObat()">Save Changes</button>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
