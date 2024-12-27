@@ -32,21 +32,13 @@
                 </div>
                 <ul>
                     <li>
-                        <a href = "{{ route('CRUDMitra')}}">MITRA</a>
+                    <a href="{{ route('CRUDMitra.index') }}">MITRA</a>
                     </li>
                     <li>
                         <a href = "{{ route('CRUDObat')}}">OBAT</a>
                     </li>
                     <li>
-                    @if(Auth::check())
-                        <a href="#" 
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            LOGOUT
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    @endif
+                        <a href = "{{ route('login')}}">LOGOUT</a>
                     </li>
                 </ul>            
             </div>
