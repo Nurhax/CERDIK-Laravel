@@ -4,64 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{asset('css/mainStyles/panduan.css')}}">
-    <title>CERDIK-Panduan</title>
+    <link rel="stylesheet" href="{{ asset('css/mainStyles/panduan.css') }}">
+    <title>CERDIK - Panduan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
     <nav>
         <div class="Logo">
-            <img src="{{asset('storage/CerdikLogo.png')}} "  alt="Logo">
+            <img src="{{ asset('storage/CerdikLogo.png') }}" alt="Logo">
             <p>Cerdikin</p>
-        </div>    
+        </div>
         <ul>
-            <li>
-                <a href = "{{route('landingPage')}}">BERANDA</a>
-            </li>
-            <li>
-                <a href = "{{route('mitraKami')}}">MITRA KAMI</a>
-            </li>
-            <li>
-                <a href = "{{route('tentangObat')}}">TENTANG OBAT</a>
-            </li>
-            <li>
-                <a href = "{{route('panduan')}}">PANDUAN</a>
-            </li>
+            <li><a href="{{ route('landingPage') }}">BERANDA</a></li>
+            <li><a href="{{ route('mitraKami') }}">MITRA KAMI</a></li>
+            <li><a href="{{ route('tentangObat') }}">TENTANG OBAT</a></li>
+            <li><a href="{{ route('panduan') }}">PANDUAN</a></li>
         </ul>
     </nav>
 
-<div>
+    <div>
     <div class="container">
         <h1>Ada yang bisa kami bantu?</h1>
 
         <div class="search-bar">
-            <form action="" class="searchBar">
-                <input type="text" placeholder="Ketik kata kunci" name="cariPanduan">
-                <button type="submit"><img src="{{asset('storage/searchIcon.png')}}" alt="Search Icon"> </button>
+            <form action="{{ route('panduan') }}" method="GET" class="searchBar">
+                <input type="text" placeholder="Ketik kata kunci" name="cariPanduan" value="{{ request('cariPanduan') }}">
+                <button type="submit">
+                    <img src="{{ asset('storage/searchIcon.png') }}" alt="Search Icon">
+                </button>
             </form>
         </div>
     </div>
 </div>
 
-    <div class="categories">
-        <h2>Yang sering ditanyakan</h2>
+
+<div class="categories">
+
+    @if($panduanList->isEmpty())
+        <p>Tidak ada panduan yang cocok dengan kata kunci "{{ $query }}"</p>
+    @else
         <div class="category-boxes">
-            <div class="category-box" onclick="showPopup(0)">Jadwal Obat</div>
-            <div class="category-box" onclick="showPopup(1)">Obat</div>
-            <div class="category-box" onclick="showPopup(2)">Help Center</div>
+            @foreach($panduanList as $index => $panduan)
+            <div class="category-box" onclick="showPopup({{ $index }})">
+                {{ $panduan->title }}
+            </div>
+            @endforeach
         </div>
-    </div>
+    @endif
+</div>
+
 
     <!-- Popup modal -->
     <div id="popup" class="popup">
         <div class="popup-content">
             <button class="back-button" onclick="closePopup()">Kembali</button>
-            <p id = 'popup-title'></p>
+            <p id="popup-title"></p>
             <p id="popup-text"></p>
         </div>
     </div>
-    
+
+    <script>
+        // Data panduan untuk digunakan di popup
+        const panduanList = @json($panduanList);
+
+        function showPopup(index) {
+            const panduan = panduanList[index];
+            document.getElementById('popup-title').textContent = panduan.title;
+            document.getElementById('popup-text').textContent = panduan.description;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
     <!-- Footer modal -->
     <footer class="text-center py-3">
         <div class="container-fluid text-center py-4">
@@ -108,8 +125,8 @@
         </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="{{asset('js/mainScripts/panduan.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>
