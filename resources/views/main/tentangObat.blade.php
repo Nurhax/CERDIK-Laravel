@@ -73,7 +73,9 @@
 
 
     <script>
-        const obats = @json($obats);
+        const allObats = @json($obats); // Semua data obat
+        let filteredObats = [...allObats]; // Data obat hasil pencarian
+        let displayedCount = 8; // Jumlah item yang ditampilkan awalnya
 
         function showPopup(index) {
             const popup = document.getElementById('popup');
@@ -81,7 +83,7 @@
             const popupTitle = document.getElementById('popup-title');
             const popupText = document.getElementById('popup-text');
 
-            const obat = obats[index];
+            const obat = filteredObats[index];
             if (obat) {
                 popupImg.src = obat.url_gambar;
                 popupImg.alt = "Gambar " + obat.nama_obat;
@@ -98,23 +100,57 @@
             document.getElementById('popup').style.display = 'none';
         }
 
-        function loadMore() {
-            const cards = document.querySelectorAll('.column-grid .card');
-            let hiddenCount = 0;
+        function renderObats() {
+            const container = document.querySelector('.column-grid');
+            container.innerHTML = ''; // Kosongkan kontainer
 
-            cards.forEach(card => {
-                if (card.style.display === 'none' && hiddenCount < 8) {
-                    card.style.display = 'block';
-                    hiddenCount++;
-                }
+            filteredObats.slice(0, displayedCount).forEach((obat, index) => {
+                const card = document.createElement('div');
+                card.className = `card c${index}`;
+                card.setAttribute('onclick', `showPopup(${index})`);
+                card.innerHTML = `
+                <img src="${obat.url_gambar}" alt="Gambar ${obat.nama_obat}">
+                <div class="card-name">${obat.nama_obat}</div>
+            `;
+                container.appendChild(card);
             });
 
-            const hasMoreHidden = Array.from(cards).some(card => card.style.display === 'none');
-            if (!hasMoreHidden) {
-                document.getElementById('loadMore').style.display = 'none';
+            updateLoadMoreButton();
+        }
+
+        function loadMore() {
+            displayedCount += 8; // Tambah jumlah item yang ditampilkan
+            renderObats();
+        }
+
+        function updateLoadMoreButton() {
+            const loadMoreButton = document.getElementById('loadMore');
+            if (displayedCount >= filteredObats.length) {
+                loadMoreButton.style.display = 'none';
+            } else {
+                loadMoreButton.style.display = 'block';
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            renderObats(); // Render data awal
+
+            const searchForm = document.querySelector('.searchBar');
+            searchForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Hindari reload halaman
+
+                const searchInput = document.querySelector('input[name="cariObat"]').value.toLowerCase();
+                filteredObats = allObats.filter(obat =>
+                    obat.nama_obat.toLowerCase().includes(searchInput)
+                );
+
+                displayedCount = 8; // Reset jumlah item yang ditampilkan
+                renderObats();
+            });
+        });
     </script>
+
+
 
 
     <footer class="text-center py-3">
